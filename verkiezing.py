@@ -25,3 +25,18 @@ class Kiezer:
         stem = Stem(kandidaat)
         kandidaat.geef_stem(stem)
         print(f"{self.naam} heeft gestemd op {kandidaat}")
+
+class Verkiezing:
+    def __init__(self):
+        self.kandidaten = []
+        self.kiezers = []
+    
+    def voeg_kandidaat_toe(self, kandidaat):
+        self.kandidaten.append(kandidaat)
+    
+    def voeg_kiezer_toe(self, kiezer):
+        self.kiezers.append(kiezer)
+    
+    def stemronde(self):
+        for kiezer in self.kiezers:
+            kiezer.stem(self.kandidaten[0])
